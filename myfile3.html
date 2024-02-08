@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Physicists</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lobster&display=swap">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #282c34;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        header {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-logo {
+            width: 60px;
+            margin-left: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #34495e;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        main {
+            padding: 80px 20px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .scroll-down-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #27ae60;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            display: none;
+            z-index: 1000;
+        }
+
+        .scroll-down-button:hover {
+            background-color: #219b56;
+        }
+
+        .section-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .course-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .course-box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: #3498db;
+            border-radius: 8px;
+            display: inline-block;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .course-box:hover {
+            transform: scale(1.05);
+        }
+
+        .course-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .course-box:hover .course-content {
+            transform: scaleY(1);
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .course-description {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .buy-button {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #e74c3c;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .buy-button:hover {
+            background-color: #c0392b;
+        }
+
+        .footer-section {
+            background-color: #2c3e50;
+            padding: 30px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: particleAnimation 5s infinite;
+        }
+
+        @keyframes particleAnimation {
+            from {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .videos-section {
+            background-color: #3498db;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .videos-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .login-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #e74c3c;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .login-button:hover {
+            background-color: #c0392b;
+        }
+
+        .company-logo {
+            width: 60px;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="C:\Users\archi\Downloads\Future Physicists-logos (5)\Future Physicists-logos.jpeg" alt="Company Logo" class="company-logo"><h1>Future Physicists</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses Offering</a>
+        <a href="#">Videos</a>
+        <a href="#">Info</a>
+        <a href="#">Contact</a>
+        <a href="#" class="login-button">Login / Sign Up</a>
+    </nav>
+
+    <main>
+        <div class="section-heading">Welcome to Future Physicists</div>
+
+        <div class="course-section">
+            <div class="course-box">
+                <div class="course-content">
+                    <div class="course-title">Physics 101</div>
+                    <div class="course-description">Introduction to the fundamental principles of physics.</div>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="course-box">
+                <div class="course-content">
+                    <div class="course-title">Mathematics Mastery</div>
+                    <div class="course-description">Advanced math skills for real-world applications.</div>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+            </div>
+            <!-- Add more course boxes as needed -->
+        </div>
+    </main>
+
+    <div class="particles">
+        <!-- Particle Animation -->
+        <!-- You can adjust the number of particles by adding more divs -->
+        <div class="particle" style="top: 20%; left: 10%; width: 10px; height: 10px;"></div>
+        <div class="particle" style="top: 50%; left: 80%; width: 8px; height: 8px;"></div>
+        <div class="particle" style="top: 80%; left: 30%; width: 12px; height: 12px;"></div>
+    </div>
+
+    <a href="#" class="scroll-down-button" onclick="scrollToContent()">Scroll Down</a>
+
+    <div class="videos-section">
+        <div class="videos-heading">Check Out Our Physics Videos</div>
+        <!-- Embed your YouTube video here -->
+        <iframe width="560" height="315" src="https://youtube.com/shorts/CmZTVAYOSSM?si=ojkOUGHAwgdJgjmq" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+
+    <img src="C:\Users\archi\Downloads\Future Physicists-logos (5)\Future Physicists-logos.jpeg" alt="Company Logo" class="company-logo">
+
+    <div class="footer-section">
+        <footer>
+            <div>
+                <h3>Info</h3>
+                <p>We are the Future Physicists.This is our website to help people learn and understand Physics.</p>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p>Email: futurephysicists@gmail.com</p>
+                <p>Phone: +91 8981740170</p>
+            </div>
+
+            <div>
+                <h3>Address</h3>
+                <p>Future Physicists Pvt. Ltd.,Salt Lake</p>
+                <p>Kolkata, 700001</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function scrollToContent() {
+            document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function () {
+            var scrollButton = document.querySelector('.scroll-down-button');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

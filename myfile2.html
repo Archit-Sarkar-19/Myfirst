@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #282c34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #61dafb;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .physics-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .atom {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #61dafb;
+            animation: atomRotate 4s linear infinite, atomFloat 2s ease-in-out infinite alternate;
+        }
+
+        .electron {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #61dafb;
+            border-radius: 50%;
+            animation: electronOrbit 2s linear infinite;
+        }
+
+        .gravitational-field {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 100px;
+            height: 10px;
+            background-color: #61dafb;
+            transform-origin: 50% 0;
+            animation: gravitationalField 2s linear infinite alternate;
+        }
+
+        .display-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        @keyframes atomRotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        @keyframes atomFloat {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes electronOrbit {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+
+        @keyframes gravitationalField {
+            0% {
+                transform: scaleY(1);
+            }
+
+            100% {
+                transform: scaleY(1.5);
+            }
+        }
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #282c34;
+        }
+        
+        .login-button {
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            border-radius: 8px;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            user-select: none;
+            margin-top: 265px;
+        }
+        
+        .login-button:hover {
+            background: linear-gradient(45deg, #e74c3c, #3498db);
+        }
+        
+        .login-button:active {
+            transform: scale(0.95);
+        }
+        header {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+            color: #fff;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="physics-container">
+        <div class="atom"></div>
+        <div class="electron"></div>
+        <div class="gravitational-field"></div>
+        <div class="display-text">Future Physicists</div>
+        <div><a href="file:///C:/Users/archi/OneDrive/Archit%20OneDrive/Python%20Codes/tution/myfile.html#" class="login-button">Login</a></div>
+    </div>
+    <p>We are the Future Physicists.</p>
+    <p>This is our website to help people learn and understand Physics.</p>
+</body>
+
+</html>
+
